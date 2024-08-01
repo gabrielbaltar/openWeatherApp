@@ -1,0 +1,16 @@
+* {
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Inter", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  line-height: 150%;
+}
+
+body {
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  color: #333;
+}

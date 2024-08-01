@@ -7,8 +7,6 @@ function WeatherInformations({ weather }) {
         return <p></p>;
     }
 
-    console.log(weather);
-
     return (
 
         <div className='weather-container'>
@@ -16,17 +14,18 @@ function WeatherInformations({ weather }) {
             <div className='weather-info'>
                 <img 
                     src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="Ícone da temperatura Atual na cidade"/>
-                <p className='temperature'>Temperatura {Math.round(weather.main.temp)}ºC</p>
+                <p className='temperature'>{Math.round(weather.main.temp)}ºC</p>
             </div>
             <p className='description'>
                 {weather.weather[0].description}
             </p>
-            <div>
+            <div className='details'>
                 <p>Sencação Termica: {Math.round(weather.main.feels_like)}ºC</p>
                 <p>Umidade: {Math.round(weather.main.humidity)}%</p>
                 <p>Pressão: {Math.round(weather.main.pressure)} hPa</p>
             </div>
         </div>
+
     );
 
 

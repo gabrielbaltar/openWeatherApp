@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import './App.css'
 import WeatherInformations from './components/WeatherInformations/WeatherInformations'
@@ -7,11 +7,19 @@ function App() {
 
   const [weather, setWeather] = useState({})
 
-  const inputRef = useRef('')
+  const [city, setCity] = useState('');
+
+  //const inputRef = useRef('')
+
+  const handleInputChange = (event) => {
+    setCity(event.target.value); 
+  }
 
   async function searchCity() {
 
-    const city = inputRef.current.value
+    if(!city) return;
+
+    setCity('') // clear previous weather data
 
     const apiKey = "4438171b63239e4c23fedb5a9dcbf242";
 
@@ -30,7 +38,9 @@ function App() {
       <div className='container'>
           <h1>Previsão do Tempo</h1>
         <input 
-          ref={inputRef}
+          onChange={handleInputChange}
+          //ref={inputRef}
+          value={city} 
           type="text"
           placeholder="Digite o nome da cidade"
         />

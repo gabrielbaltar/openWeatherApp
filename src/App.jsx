@@ -16,16 +16,19 @@ function App() {
 
   //const inputRef = useRef('')
 
+  // Função para buscar a cidade ao clicar no botão
   const handleInputChange = (event) => {
     setCity(event.target.value); 
   }
 
+  // Função para buscar a cidade ao pressionar a tecla Enter
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       searchCity();
     }
   }
 
+  // Função para buscar a cidade
   async function searchCity() {
 
     setError('');
@@ -58,16 +61,10 @@ function App() {
 
     // Requisição para a api de 5 dias do OpenWeather 5 dias
     const responseApiFiveDays = await axios.get(urlFiveDays);
-    
-    // console.log(responseApiFiveDays);
-
-    // console.log(longitude, latitude);
-
+  
     setWeatherFiveDays(responseApiFiveDays.data);
 
     setWeather(responseApi.data);
-
-    // fetch weather data from API
 
     } catch (error) {
 

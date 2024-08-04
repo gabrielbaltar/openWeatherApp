@@ -7,39 +7,39 @@ function WeatherFiveDaysInformations({ weatherFiveDays }) {
         return <p></p>;
     }
 
-    const capitalizeFirstLetter = (str) => {
-        if (!str) return '';
-        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    const capitalizeFirstLetter = (string) => {
+        if (!string) return '';
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     };
 
     // Primeiro dia da semana
     const icons = weatherFiveDays.list[0].weather[0].icon;
-    const temperatureMin = Math.round(weatherFiveDays.list[0].main.temp_min);
-    const temperatureMax = Math.round(weatherFiveDays.list[0].main.temp_max);
+    const temperatureMin = Math.floor(weatherFiveDays.list[0].main.temp_min);
+    const temperatureMax = Math.ceil(weatherFiveDays.list[0].main.temp_max);
     const weatherDescription = capitalizeFirstLetter(weatherFiveDays.list[0].weather[0].description);
 
     // Segundo dia da semana
     const icons2 = weatherFiveDays.list[7].weather[0].icon;
-    const temperatureMin2 = Math.round(weatherFiveDays.list[7].main.temp_min);
-    const temperatureMax2 = Math.round(weatherFiveDays.list[7].main.temp_max);
+    const temperatureMin2 = Math.floor(weatherFiveDays.list[7].main.temp_min);
+    const temperatureMax2 = Math.ceil(weatherFiveDays.list[7].main.temp_max);
     const weatherDescription2 = capitalizeFirstLetter(weatherFiveDays.list[7].weather[0].description);
 
     // Terceiro dia da semana
     const icons3 = weatherFiveDays.list[15].weather[0].icon;
-    const temperatureMin3 = Math.round(weatherFiveDays.list[15].main.temp_min);
-    const temperatureMax3 = Math.round(weatherFiveDays.list[15].main.temp_max);
+    const temperatureMin3 = Math.floor(weatherFiveDays.list[15].main.temp_min);
+    const temperatureMax3 = Math.ceil(weatherFiveDays.list[15].main.temp_max);
     const weatherDescription3 = capitalizeFirstLetter(weatherFiveDays.list[15].weather[0].description);
 
     // Quarto dia da semana
     const icons4 = weatherFiveDays.list[23].weather[0].icon;
-    const temperatureMin4 = Math.round(weatherFiveDays.list[23].main.temp_min);
-    const temperatureMax4 = Math.round(weatherFiveDays.list[23].main.temp_max);
+    const temperatureMin4 = Math.floor(weatherFiveDays.list[23].main.temp_min);
+    const temperatureMax4 = Math.ceil(weatherFiveDays.list[23].main.temp_max);
     const weatherDescription4 = capitalizeFirstLetter(weatherFiveDays.list[23].weather[0].description);
 
     // Quinto dia da semana
     const icons5 = weatherFiveDays.list[31].weather[0].icon;
-    const temperatureMin5 = Math.round(weatherFiveDays.list[31].main.temp_min);
-    const temperatureMax5 = Math.round(weatherFiveDays.list[31].main.temp_max);
+    const temperatureMin5 = Math.floor(weatherFiveDays.list[31].main.temp_min);
+    const temperatureMax5 = Math.ceil(weatherFiveDays.list[31].main.temp_max);
     const weatherDescription5 = capitalizeFirstLetter(weatherFiveDays.list[31].weather[0].description);
 
     return (

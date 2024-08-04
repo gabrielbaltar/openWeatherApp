@@ -12,13 +12,27 @@ function App() {
 
   const [city, setCity] = useState('');
 
+  const [error, setError] = useState('');
+
   //const inputRef = useRef('')
 
   const handleInputChange = (event) => {
     setCity(event.target.value); 
   }
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      searchCity();
+    }
+  }
+
   async function searchCity() {
+
+    setError('');
+
+    setWeather({});
+
+    setWeatherFiveDays({});
 
     if(!city) return;
 
@@ -53,17 +67,11 @@ function App() {
 
     setWeather(responseApi.data);
 
-    console.log(responseApiFiveDays.data.list);
-
-    console.log(responseApiFiveDays.data.list[0]);
-
-    console.log(responseApiFiveDays.data.list[0].main);
-
     // fetch weather data from API
 
     } catch (error) {
 
-      console.error("Erro ao buscar dados da API:", error);
+      setError('Cidade não encontrada. Por Favor tente novamente!');
 
     }
 
@@ -75,15 +83,16 @@ function App() {
           <h1>Previsão do Tempo</h1>
         <input 
           onChange={handleInputChange}
+          onKeyDown={handleKeyPress}
           //ref={inputRef}
           value={city} 
           type="text"
           placeholder="Digite o nome da cidade"
         />
         <button onClick={searchCity}>Buscar</button>
-
         <WeatherInformations weather={weather}/>
         <WeatherFiveDaysInformations weatherFiveDays={weatherFiveDays}/>
+        <span>{error}</span>
       </div>
     </>
   )

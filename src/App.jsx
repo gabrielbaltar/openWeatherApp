@@ -14,8 +14,6 @@ function App() {
 
   const [error, setError] = useState('');
 
-  //const inputRef = useRef('')
-
   // Função para buscar a cidade ao clicar no botão
   const handleInputChange = (event) => {
     setCity(event.target.value); 
@@ -55,24 +53,32 @@ function App() {
     
     // latitude da Api de 5 dias
     const latitude = await responseApi.data.coord.lat;
-    
+
     // url da Api de 5 dias
     const urlFiveDays = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&lang=pt_br&units=metric`;
 
     // Requisição para a api de 5 dias do OpenWeather 5 dias
     const responseApiFiveDays = await axios.get(urlFiveDays);
+
+    // data do dia da previsão
+    const apiDate = await responseApiFiveDays.data.list[0].dt_txt;
   
     setWeatherFiveDays(responseApiFiveDays.data);
 
     setWeather(responseApi.data);
 
+    console.log(responseApiFiveDays.data.list);
+
+    console.log(apiDate);
+
+
     } catch (error) {
 
       setError('Cidade não encontrada. Por Favor tente novamente!');
 
-    }
+    } 
 
-  }
+  } 
 
   return (
     <>

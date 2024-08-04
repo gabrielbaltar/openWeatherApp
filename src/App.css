@@ -71,6 +71,14 @@ span {
   button {
     width: 100%;
     height: 3rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  input::placeholder {
+    color: #C8C8C8;
+    font-size: 1rem;
+    font-weight: 400 !important;
   }
 
 }
@@ -80,5 +88,5 @@ span {
   h1 {
     font-size: 2rem;
   }
-  
+
 }

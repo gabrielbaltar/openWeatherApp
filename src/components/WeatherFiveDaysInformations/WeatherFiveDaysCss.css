@@ -1,0 +1,36 @@
+.weather-five-days-container {
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 80%);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.temperature-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.temperature-card {
+    margin-top: 1.5rem;
+    background-color: #ffffff;
+    width: 160px;
+    padding: 1rem 0px; 
+    border-radius: 4px;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.temperature-card p {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.temperature-card img {
+    width: 2rem;
+    background-color: #00b4db;
+    border-radius: 4px;
+}

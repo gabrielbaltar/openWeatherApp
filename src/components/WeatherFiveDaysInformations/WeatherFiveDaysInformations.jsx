@@ -1,7 +1,7 @@
 
 import './WeatherFiveDaysCss.css';
 
-function WeatherFiveDaysInformations({ weatherFiveDays }) {
+function WeatherFiveDaysInformations({ weatherFiveDays, datePart, datePart2, datePart3, datePart4, datePart5 }) {
 
     if(!weatherFiveDays || !weatherFiveDays.list || weatherFiveDays.list.length === 0) {
         return <p></p>;
@@ -14,8 +14,8 @@ function WeatherFiveDaysInformations({ weatherFiveDays }) {
 
     // Variável armazenando os ícones retornados da api da OpenWeather
     const icons = weatherFiveDays.list[0].weather[0].icon;
-    
-    const icons2 = weatherFiveDays.list[7].weather[0].icon;
+
+    const icons2 = weatherFiveDays.list[8].weather[0].icon;
 
     const icons3 = weatherFiveDays.list[15].weather[0].icon;
 
@@ -28,7 +28,7 @@ function WeatherFiveDaysInformations({ weatherFiveDays }) {
             <h2>Previsão da Semana</h2>
             <div className="temperature-card-content">
                 <div className="temperature-card">
-                    <p>Sexta-Feira 4</p>
+                    <p>{datePart}</p>
                     <img 
                         src={`http://openweathermap.org/img/wn/${icons}.png`} alt="Ícone da temperatura Atual na cidade"
                     /> 
@@ -37,16 +37,16 @@ function WeatherFiveDaysInformations({ weatherFiveDays }) {
                 </div>
 
                 <div className="temperature-card">
-                    <p>Quinta-Feita 5</p>
+                    <p>{datePart2}</p>
                     <img 
                         src={`http://openweathermap.org/img/wn/${icons2}.png`} alt="Ícone da temperatura Atual na cidade"
                     /> 
-                    <p>{Math.floor(weatherFiveDays.list[7].main.temp_min)} C° / {Math.ceil(weatherFiveDays.list[7].main.temp_max)} C°</p>
-                    <p>{capitalizeFirstLetter(weatherFiveDays.list[7].weather[0].description)}</p>
+                    <p>{Math.floor(weatherFiveDays.list[8].main.temp_min)} C° / {Math.ceil(weatherFiveDays.list[8].main.temp_max)} C°</p>
+                    <p>{capitalizeFirstLetter(weatherFiveDays.list[8].weather[0].description)}</p>
                 </div>
 
                 <div className="temperature-card">
-                    <p>Qua. 4</p>
+                    <p>{datePart3}</p>
                     <img 
                         src={`http://openweathermap.org/img/wn/${icons3}.png`} alt="Ícone da temperatura Atual na cidade"
                     /> 
@@ -54,7 +54,7 @@ function WeatherFiveDaysInformations({ weatherFiveDays }) {
                     <p>{capitalizeFirstLetter(weatherFiveDays.list[15].weather[0].description)}</p>
                 </div>
                 <div className="temperature-card">
-                    <p>Qua. 4</p>
+                    <p>{datePart4}</p>
                     <img 
                         src={`http://openweathermap.org/img/wn/${icons4}.png`} alt="Ícone da temperatura Atual na cidade"
                     /> 
@@ -62,7 +62,7 @@ function WeatherFiveDaysInformations({ weatherFiveDays }) {
                     <p>{capitalizeFirstLetter(weatherFiveDays.list[23].weather[0].description)}</p>
                 </div>
                 <div className="temperature-card">
-                    <p>Qua. 4</p>
+                    <p>{datePart5}</p>
                     <img 
                         src={`http://openweathermap.org/img/wn/${icons5}.png`} alt="Ícone da temperatura Atual na cidade"
                     /> 

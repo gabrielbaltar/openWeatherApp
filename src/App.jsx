@@ -14,6 +14,16 @@ function App() {
 
   const [error, setError] = useState('');
 
+  const [datePart, setDatePart] = useState('');
+
+  const [datePart2, setDatePart2] = useState('');
+
+  const [datePart3, setDatePart3] = useState('');
+
+  const [datePart4, setDatePart4] = useState('');
+
+  const [datePart5, setDatePart5] = useState('');
+
   // Função para buscar a cidade ao clicar no botão
   const handleInputChange = (event) => {
     setCity(event.target.value); 
@@ -62,15 +72,35 @@ function App() {
 
     // data do dia da previsão
     const apiDate = await responseApiFiveDays.data.list[0].dt_txt;
+    const apiDate2 = await responseApiFiveDays.data.list[8].dt_txt;
+    const apiDate3 = await responseApiFiveDays.data.list[20].dt_txt;
+    const apiDate4 = await responseApiFiveDays.data.list[28].dt_txt;
+    const apiDate5 = await responseApiFiveDays.data.list[36].dt_txt;
+
+    const [extractDatePart] = apiDate.split(' ');
+    const [datePart2] = apiDate2.split(' ');
+    const [datePart3] = apiDate3.split(' ');
+    const [datePart4] = apiDate4.split(' ');
+    const [datePart5] = apiDate5.split(' ');
+
+    setDatePart(extractDatePart);
+    setDatePart2(datePart2);
+    setDatePart3(datePart3);
+    setDatePart4(datePart4);
+    setDatePart5(datePart5);
   
+
+    // const [year, month, day] = datePart.split('-');
+    
     setWeatherFiveDays(responseApiFiveDays.data);
 
     setWeather(responseApi.data);
 
-    console.log(responseApiFiveDays.data.list);
+    // console.log(responseApiFiveDays.data.list);
 
-    console.log(apiDate);
+    // console.log(apiDate);
 
+    // console.log(datePart);
 
     } catch (error) {
 
@@ -94,7 +124,14 @@ function App() {
         />
         <button onClick={searchCity}>Buscar</button>
         <WeatherInformations weather={weather}/>
-        <WeatherFiveDaysInformations weatherFiveDays={weatherFiveDays}/>
+        <WeatherFiveDaysInformations 
+          weatherFiveDays={weatherFiveDays}
+          datePart={datePart}
+          datePart2={datePart2}
+          datePart3={datePart3}
+          datePart4={datePart4}
+          datePart5={datePart5}  
+        />
         <span>{error}</span>
       </div>
     </>

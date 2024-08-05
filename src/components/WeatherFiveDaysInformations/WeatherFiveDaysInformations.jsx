@@ -17,11 +17,11 @@ function WeatherFiveDaysInformations({ weatherFiveDays, datePart, datePart2, dat
 
     const icons2 = weatherFiveDays.list[8].weather[0].icon;
 
-    const icons3 = weatherFiveDays.list[15].weather[0].icon;
+    const icons3 = weatherFiveDays.list[20].weather[0].icon;
 
-    const icons4 = weatherFiveDays.list[23].weather[0].icon;
+    const icons4 = weatherFiveDays.list[28].weather[0].icon;
 
-    const icons5 = weatherFiveDays.list[31].weather[0].icon;
+    const icons5 = weatherFiveDays.list[36].weather[0].icon;
 
     return (
         <div className="weather-five-days-container">
@@ -50,24 +50,24 @@ function WeatherFiveDaysInformations({ weatherFiveDays, datePart, datePart2, dat
                     <img 
                         src={`http://openweathermap.org/img/wn/${icons3}.png`} alt="Ícone da temperatura Atual na cidade"
                     /> 
-                    <p>{Math.floor(weatherFiveDays.list[15].main.temp_min)} C° / {Math.ceil(weatherFiveDays.list[15].main.temp_max)} C°</p>
-                    <p>{capitalizeFirstLetter(weatherFiveDays.list[15].weather[0].description)}</p>
+                    <p>{Math.floor(weatherFiveDays.list[20].main.temp_min)} C° / {Math.ceil(weatherFiveDays.list[20].main.temp_max)} C°</p>
+                    <p>{capitalizeFirstLetter(weatherFiveDays.list[20].weather[0].description)}</p>
                 </div>
                 <div className="temperature-card">
                     <p>{datePart4}</p>
                     <img 
                         src={`http://openweathermap.org/img/wn/${icons4}.png`} alt="Ícone da temperatura Atual na cidade"
                     /> 
-                    <p>{Math.floor(weatherFiveDays.list[23].main.temp_min)} C° / {Math.ceil(weatherFiveDays.list[23].main.temp_max)} C°</p>
-                    <p>{capitalizeFirstLetter(weatherFiveDays.list[23].weather[0].description)}</p>
+                    <p>{Math.floor(weatherFiveDays.list[28].main.temp_min)} C° / {Math.ceil(weatherFiveDays.list[28].main.temp_max)} C°</p>
+                    <p>{capitalizeFirstLetter(weatherFiveDays.list[28].weather[0].description)}</p>
                 </div>
                 <div className="temperature-card">
                     <p>{datePart5}</p>
                     <img 
                         src={`http://openweathermap.org/img/wn/${icons5}.png`} alt="Ícone da temperatura Atual na cidade"
                     /> 
-                    <p>{Math.floor(weatherFiveDays.list[31].main.temp_min)} C° / {Math.ceil(weatherFiveDays.list[31].main.temp_max)} C°</p>
-                    <p>{capitalizeFirstLetter(weatherFiveDays.list[31].weather[0].description)}</p>
+                    <p>{Math.floor(weatherFiveDays.list[36].main.temp_min)} C° / {Math.ceil(weatherFiveDays.list[36].main.temp_max)} C°</p>
+                    <p>{capitalizeFirstLetter(weatherFiveDays.list[36].weather[0].description)}</p>
                 </div>
             </div>
         </div>

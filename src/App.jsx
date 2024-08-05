@@ -83,11 +83,24 @@ function App() {
     const [datePart4] = apiDate4.split(' ');
     const [datePart5] = apiDate5.split(' ');
 
-    setDatePart(extractDatePart);
-    setDatePart2(datePart2);
-    setDatePart3(datePart3);
-    setDatePart4(datePart4);
-    setDatePart5(datePart5);
+    // Convertendo a data para o formato dd/mm/aaaa
+    const [year, month, day] = extractDatePart.split('-');
+    const [year2, month2, day2] = datePart2.split('-');
+    const [year3, month3, day3] = datePart3.split('-');
+    const [year4, month4, day4] = datePart4.split('-');
+    const [year5, month5, day5] = datePart5.split('-');
+
+    const formattedDate = `${day}/${month}/${year}`;
+    const formattedDate2 = `${day2}/${month2}/${year2}`;
+    const formattedDate3 = `${day3}/${month3}/${year3}`;
+    const formattedDate4 = `${day4}/${month4}/${year4}`;
+    const formattedDate5 = `${day5}/${month5}/${year5}`;
+
+    setDatePart(formattedDate);
+    setDatePart2(formattedDate2);
+    setDatePart3(formattedDate3);
+    setDatePart4(formattedDate4);
+    setDatePart5(formattedDate5);
   
 
     // const [year, month, day] = datePart.split('-');

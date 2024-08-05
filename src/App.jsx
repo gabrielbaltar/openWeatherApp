@@ -41,9 +41,9 @@ function App() {
 
     setError('');
 
-    setWeather({});
+    // setWeather({});
 
-    setWeatherFiveDays({});
+    // setWeatherFiveDays({});
 
     if(!city) return;
 

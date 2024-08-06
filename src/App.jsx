@@ -76,6 +76,7 @@ function App() {
     const apiDate3 = await responseApiFiveDays.data.list[20].dt_txt;
     const apiDate4 = await responseApiFiveDays.data.list[28].dt_txt;
     const apiDate5 = await responseApiFiveDays.data.list[36].dt_txt;
+    
 
     const [extractDatePart] = apiDate.split(' ');
     const [datePart2] = apiDate2.split(' ');

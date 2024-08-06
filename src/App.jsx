@@ -41,10 +41,6 @@ function App() {
 
     setError('');
 
-    // setWeather({});
-
-    // setWeatherFiveDays({});
-
     if(!city) return;
 
     setCity('') // clear previous weather data
@@ -118,7 +114,12 @@ function App() {
 
     } catch (error) {
 
+      
       setError('Cidade não encontrada. Por Favor tente novamente!');
+      
+      setWeather({});
+
+      setWeatherFiveDays({});
 
     } 
 
